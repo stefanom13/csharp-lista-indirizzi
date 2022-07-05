@@ -40,10 +40,13 @@ while (!fileRead.EndOfStream)
 
 }
 
+fileRead.Close();
+
 foreach (Indirizzo indirizzo in indirizzi)
 {
     indirizzo.MostraIndirizzi();
 
 }
+
 
 
