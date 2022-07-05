@@ -8,34 +8,31 @@ namespace ListaIndirizzi
 {
     internal class Indirizzo
     {
-        // Nome,Cognome,Via,Città,Provincia,ZIP
-        public string Nome { get; set; }
-        public string Cognome { get; set; }
-        public string Via { get; set; }
-        public string Città { get; set; }
-        public string Provincia { get; set; }
-        public int ZIP { get; set; }
+       
+            public string Nome { get; set; }
+            public string Cognome{ get; set; }
+            public string Via { get; set; }
+            public string Citta { get; set; }
+            public string Provincia { get; set; }
+            public string Zip { get; set; }
 
 
-        public Indirizzo(string nome, string cognome, string città, string via, string provincia, int zip)
-        {
-            Nome = nome;
-            Cognome = cognome;
-            Città = città;
-            Via = via;
-            Provincia = provincia;
-            ZIP = zip;
-        }
+            public Indirizzo(string nome, string cognome, string via, string citta, string provincia, string zip)
+            {
+                Nome = nome;
+                Cognome = cognome;
+                Via = via;
+                Citta = citta;
+                Provincia = provincia;
+                Zip = zip;
 
-        public void ToString()
-        {
-            Console.WriteLine("\n* INDIRIZZO: *");
-            Console.WriteLine($"Nome: {Nome}");
-            Console.WriteLine($"Cognome: {Cognome}");
-            Console.WriteLine($"Via: {Via}");
-            Console.WriteLine($"Città: {Città}");
-            Console.WriteLine($"Provincia: {Provincia}");
-            Console.WriteLine($"ZIP: {ZIP}");
-        }
+            }
+            public Indirizzo() { }
+
+            public void MostraIndirizzi()
+            {
+                Console.Write("\n--- Indirizzo ---\nNome {0}\nCognome {1}\nIndirizzo {2}\nCittà {3}\nProvincia {4}\n ZipCode {5}\n--------------");
+            }
+        
     }
 }
