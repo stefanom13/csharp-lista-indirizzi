@@ -14,39 +14,11 @@ Console.WriteLine(fileRead.ReadLine());
 
 
 
-
 List<Indirizzo> indirizzi = new List<Indirizzo>();
 
 
-while (!fileRead.EndOfStream)
-{
-
-    string riga = fileRead.ReadLine();
-    string[] parole = riga.Split(",");
-
-    Console.WriteLine();
-    Indirizzo indirizzo;
-    try
-    {
-        indirizzo = new Indirizzo(parole[0], parole[1], parole[2], parole[3], parole[4], parole[5]);
-        indirizzi.Add(indirizzo);
-    }
-    catch (IndexOutOfRangeException)
-    {
-        indirizzo = new Indirizzo();
-        Console.WriteLine("Not save");
-    }
 
 
-}
-
-fileRead.Close();
-
-foreach (Indirizzo indirizzo in indirizzi)
-{
-    indirizzo.MostraIndirizzi();
-
-}
 
 
 

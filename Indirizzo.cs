@@ -6,33 +6,41 @@ using System.Threading.Tasks;
 
 namespace ListaIndirizzi
 {
-    internal class Indirizzo
+    public class Indirizzo
     {
-       
-            public string Nome { get; set; }
-            public string Cognome{ get; set; }
-            public string Via { get; set; }
-            public string Citta { get; set; }
-            public string Provincia { get; set; }
-            public string Zip { get; set; }
+
+        public string nome = "";
+        public string cognome = "";
+        public string via = "";
+        public string citta = "";
+        public string provincia = "";
+        public string Zip;
 
 
-            public Indirizzo(string nome, string cognome, string via, string citta, string provincia, string zip)
-            {
-                Nome = nome;
-                Cognome = cognome;
-                Via = via;
-                Citta = citta;
-                Provincia = provincia;
-                Zip = zip;
 
-            }
-            public Indirizzo() { }
+        public Indirizzo(string nome, string cognome, string via, string citta, string provincia, string zip)
+        {
+         this.nome = nome;
+         this.cognome = cognome;
+         this.via = via;
+         this.citta = citta;
+         this.provincia = provincia;
+         this.Zip = zip;
 
-            public void MostraIndirizzi()
-            {
-                Console.Write("\n--- Indirizzo ---\nNome {0}\nCognome {1}\nIndirizzo {2}\nCittà {3}\nProvincia {4}\n ZipCode {5}\n--------------");
-            }
+        }
+        public string MostraIndirizzi()
+        {
+            string descrizione = $"******Address List ******\n" +
+                    $"Name: {nome}\n" +
+                    $"Surname: {cognome}\n" +
+                    $"Street: {via}\n" +
+                    $"City: {citta}\n" +
+                    $"Province: {provincia}\n" +
+                    $"Zip: {Zip}\n" +
+            "******";
+
+            return descrizione;
+        }
         
     }
 }
