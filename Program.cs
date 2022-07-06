@@ -15,6 +15,54 @@ Console.WriteLine(fileRead.ReadLine());
 
 
 List<Indirizzo> indirizzi = new List<Indirizzo>();
+List<string> corString = new List<string>();
+
+while (!fileRead.EndOfStream)
+{
+    string indirizzoSingolo = fileRead.ReadLine();
+    //Console.WriteLine(indirizzoSingolo);
+
+    string[] data = indirizzoSingolo.Split(",");
+    try
+    {
+
+        string nome = data[0];
+        string cognome = data[1];
+        string via = data[2];
+        string citta = data[3];
+        string provincia = data[4];
+        string zipString = data[5];
+
+        try
+        {
+            int zip = int.Parse(data[5]);
+        }
+        catch (FormatException e)
+        {
+            zipString = "---";
+        }
+
+        Indirizzo indirizzo = new Indirizzo(nome, cognome, via, citta, provincia, zipString);
+        indirizzi.Add(indirizzo);
+    }
+    catch (IndexOutOfRangeException e)
+    {
+        corString.Add(indirizzoSingolo);
+    }
+    foreach (Indirizzo indirizzo in indirizzi)
+    {
+        Console.WriteLine();
+        Console.WriteLine(indirizzo.MostraIndirizzi());
+
+    }
+    foreach (string stringaErrata in corString)
+    {
+        Console.WriteLine("***** Stringa Errata *****");
+        Console.WriteLine();
+        Console.WriteLine(stringaErrata);
+    }
+}
+fileRead.Close();
 
 
 
